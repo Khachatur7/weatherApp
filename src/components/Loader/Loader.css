@@ -1,0 +1,108 @@
+.loader {
+    width: 90%;
+    height: 70%;
+    background: #ffffffde;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader_animation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader_circle_items {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.loader_circle {
+    width: 17px;
+    height: 17px;
+    left: 5%;
+    position: relative;
+    border-radius: 50%;
+    background: #e2cf21;
+    animation: .5s circle_jump infinite ease alternate;
+    transform-origin: 50%;
+    z-index: 2;
+}
+
+@keyframes circle_jump {
+    0% {
+        top: 60.5px;
+        height: 5px;
+        border-radius: 5px 5px 2.5px 2.5px;
+    }
+
+    40% {
+        height: 20px;
+        border-radius: 50%;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
+
+.loader_circle_item {
+    position: relative;
+    width: 100px;
+    height: 70px;
+    border: 1px solid #00000000;
+}
+
+.loader_circle_item:nth-child(2) .loader_circle,
+.loader_circle_item:nth-child(2) .loader_circle_shadow {
+    animation-delay: .2s;
+}
+
+.loader_circle_item:nth-child(3) .loader_circle,
+.loader_circle_item:nth-child(3) .loader_circle_shadow {
+    animation-delay: .3s;
+}
+
+
+.loader_circle_shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #585858;
+    filter: blur(2px);
+    backdrop-filter: blur(2px);
+    animation: .5s circle_shadow infinite ease-in backwards alternate;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+@keyframes circle_shadow {
+    0% {
+        transform: scaleX(1);
+        opacity: .7;
+    }
+
+    40% {
+        transform: scaleX(.75);
+        opacity: .4;
+    }
+
+    100% {
+        transform: scaleX(.2);
+        opacity: .2;
+    }
+}
+
+.loader_description{
+    font-weight: 500;
+    font-size: 25px;
+    color: #e2cf21;
+}

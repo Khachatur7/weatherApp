@@ -1,0 +1,1 @@
+export const url:string = "https://cors-anywhere.herokuapp.com/http://api.weatherapi.com/v1/current.json"
